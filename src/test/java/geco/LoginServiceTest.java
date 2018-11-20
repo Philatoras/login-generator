@@ -1,4 +1,4 @@
-package logingenerator;
+package geco;
 
 public class LoginServiceTest {
     
