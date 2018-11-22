@@ -32,4 +32,8 @@ public class LoginGeneratorTest {
     public void testGenerateLoginAccent(){
         assertEquals("", "PDUR", loginGen.generateLoginForNomAndPrenom("Dùrand", "Paul"));
     }
+    @Test
+    public void testGenerateLogin3Char(){
+        assertEquals("", "PDU", loginGen.generateLoginForNomAndPrenom("Du", "Paul"));
+    }
 }
