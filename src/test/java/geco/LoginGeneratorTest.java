@@ -8,7 +8,6 @@ import static junit.framework.TestCase.assertTrue;
 
 public class LoginGeneratorTest {
     private LoginGenerator loginGen;
-    private LoginService loginService;
 
     @Before
     public void setup(){
@@ -20,7 +19,17 @@ public class LoginGeneratorTest {
     @Test
     public void testGenerateLoginForNomAndPrenom(){
         assertEquals("", "PDUR", loginGen.generateLoginForNomAndPrenom("Durand", "Paul"));
-        assertTrue("PDUR existe", loginService.loginExists("PDUR"));
-
+    }
+    @Test
+    public void testGenerateLoginExist2(){
+        assertEquals("", "JRAL2", loginGen.generateLoginForNomAndPrenom("Ralling", "John"));
+    }
+    @Test
+    public void testGenerateLoginExist1(){
+        assertEquals("", "JROL1", loginGen.generateLoginForNomAndPrenom("Rolling", "Jean"));
+    }
+    @Test
+    public void testGenerateLoginAccent(){
+        assertEquals("", "PDUR", loginGen.generateLoginForNomAndPrenom("Dùrand", "Paul"));
     }
 }
